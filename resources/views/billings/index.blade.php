@@ -6,6 +6,13 @@
 
             @livewire('payment-method-create')
 
+
+            <div class="mt-8">
+
+                @livewire('payment-method-list')
+
+            </div>
+
         </div>
 
     </div>
