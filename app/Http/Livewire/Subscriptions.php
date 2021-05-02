@@ -10,4 +10,9 @@ class Subscriptions extends Component
     {
         return view('livewire.subscriptions');
     }
+
+    public function newSubscription($name,$price)
+    {
+     auth()->user()->newSubscription($name,$price)->create();
+    }
 }
