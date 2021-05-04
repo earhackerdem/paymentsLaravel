@@ -20,7 +20,9 @@
 
                     <hr class="my-4">
 
-                    <p class="text-sm text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet laborum qui voluptates ab rerum dolor <a class="text-blue-500 font-bold" href="">Términos y condiciones</a> </p>
+                    <p class="text-sm text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
+                        laborum qui voluptates ab rerum dolor <a class="text-blue-500 font-bold" href="">Términos y
+                            condiciones</a> </p>
 
                 </div>
 
@@ -29,6 +31,8 @@
         </div>
 
         <div class="col-span-5">
+
+            @livewire('product-pay',['product'=>$product])
 
         </div>
 
