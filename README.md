@@ -25,3 +25,15 @@ Si es posible dar un repaso del código escrito en esta lección asi como del fl
 
 El razón de esta recomendación es debido a que la naturaleza del tema te obliga a darle tiempo a los estilos del tailwind
 eso le da valor agregado pero hace que el video sea largo y uno pueda perderse en el flujo del código.
+
+
+## 12. Proteger rutas 
+
+Posible error, verificar código
+
+Para este escenario, se crea un usuario nuevo, se prueba que el middleware proteja los post, esto funciona, al ser 
+redirigido a la sección de billing, ya que el usuario es nuevo, se registra un método de pago, esto funciona correctamente,
+al registrar el nuevo método de pago se recargan los botones y muestran el texto "Subscribirse", pero al dar click este no
+ejecuta la acción. La consola no reporta errores pero si la siguiente alerta
+
+You may test your Stripe.js integration over HTTP. However, live Stripe.js integrations must use HTTPS.
