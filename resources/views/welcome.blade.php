@@ -12,7 +12,7 @@
 
                         <p class="text-gray-200 font-bold text-xl">{{ $product->price }} USD</p>
 
-                        <a href="" class="btn btn-secondary">Comprar</a>
+                        <a href="{{ route('product.pay',$product) }}" class="btn btn-secondary">Comprar</a>
 
                     </div>
 
