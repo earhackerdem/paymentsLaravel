@@ -11,6 +11,8 @@ class Subscriptions extends Component
 
     public $name = 'Curso pasarela de pagos';
 
+    public $coupon;
+
     protected $listeners =  ['render'];
 
     public function mount($price)
@@ -26,11 +28,21 @@ class Subscriptions extends Component
     public function newSubscription()
     {
         try {
-            auth()->user()->newSubscription($this->name,$this->price)
-            ->trialDays(7)
+
+            if($this->coupon){
+                auth()->user()->newSubscription($this->name,$this->price)
+                ->withCoupon($this->coupon)
+                ->create();
+            $this->emitTo('invoices','render');
+            $this->emitTo('subscriptions','render');
+            }else{
+                auth()->user()->newSubscription($this->name,$this->price)
+
             ->create();
             $this->emitTo('invoices','render');
             $this->emitTo('subscriptions','render');
+            }
+
         } catch (IncompletePayment $exception) {
             return redirect()->route(
                 'cashier.payment',

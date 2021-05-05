@@ -48,6 +48,8 @@
 
 
         @else
+            <input wire:model="coupon" class="form-control mb-3" placeholder="Ingrese un cupón...">
+
             <a wire:click="newSubscription" wire:loading.attr="disabled" wire:target="newSubscription"
                 class="cursor-pointer font-bold bg-gray-600 hover:bg-gray-700 text-white rounded-md px-10 py-2 transition-colors w-full flex items-center justify-center">
                 <x-spinner wire:loading wire:target="newSubscription" size="6" class="mr-2" />
