@@ -17,7 +17,9 @@ class Subscriptions extends Component
     public function newSubscription($name,$price)
     {
         try {
-            auth()->user()->newSubscription($name,$price)->create();
+            auth()->user()->newSubscription($name,$price)
+            ->trialDays(7)
+            ->create();
             $this->emitTo('invoices','render');//code...
         } catch (IncompletePayment $exception) {
             return redirect()->route(
